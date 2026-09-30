@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: emzaropay-api
+    runtime: node
+    buildCommand: npm install && npm run typecheck
+    startCommand: npm start
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SECRET_KEY
+        sync: false
+      - key: APP_BASE_URL
+        sync: false
+      - key: API_VERSION
+        value: v1
+      - key: WEBHOOK_SECRET
+        sync: false
